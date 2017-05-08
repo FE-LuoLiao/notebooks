@@ -95,7 +95,8 @@ function cat(arr) {
 //从localstr里或许value
 function lvalue() {
 
-    var notes = localStorage.getItem('notes');
+    // 改了这里 By Phlicess
+    var notes = localStorage.getItem('notes') || '{}';
     var array = Object.keys(JSON.parse(notes));
 
     cat(array);
@@ -106,7 +107,9 @@ function lvalue() {
 //存储用户输入目录
 function saveArray(inputText) {
     // var  = addInput.value;
-    var str = localStorage.getItem('notes');
+    
+    // 改了这里 By Phlicess
+    var str = localStorage.getItem('notes') || '{}';
     var object = JSON.parse(str);
 
     if (object[inputText]) {
